@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: nodejs-app
+  labels: 
+    app: uklon
+spec: 
+  selector:
+    matchLabels: 
+      app: uklon
+  template: 
+    metadata: 
+      labels: 
+        app: uklon
+    spec:
+      containers: 
+        - name : uklon1
+          image: oleksiihalas/nodeapp:latest
+          ports: 
+            - containerPort: 3000    
